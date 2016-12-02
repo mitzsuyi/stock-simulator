@@ -1,0 +1,20 @@
+<template bindable="router, justLanded, restart">
+  <require from="components/nav/lookup"></require>
+  <require from="components/nav/restart.html"></require>
+   <md-navbar fixed="true">
+   <a md-sidenav-collapse="ref.bind: sideNav;" class="left hide-on-large-only" style="cursor: pointer; padding: 0 10px;"><i class="material-icons menu">menu</i></a>
+    <a href="#" class="brand-logo hide-on-small-only left"><span class="flow-text">${router.title}</span></a>
+    <ul if.bind="!justLanded" class=" hide-on-med-and-down right">
+    <li>
+       <restart restart.call="restart()"></restart>
+     </li>
+     </ul>
+    <lookup if.bind="!justLanded" klass="hide-on-med-and-up"></lookup>
+    <lookup if.bind="!justLanded" klass="hide-on-small-only pushed"></lookup>
+    <md-sidenav view-model.ref="sideNav">
+         <li md-waves>
+       <restart restart.call="restart()"></restart>
+      </li> 
+    </md-sidenav>
+  </md-navbar>
+</template>

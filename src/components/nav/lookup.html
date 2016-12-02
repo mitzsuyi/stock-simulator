@@ -1,0 +1,12 @@
+<template>
+  <form class="red lighten-3 ${klass}" >
+      <div class="input-field">
+        <input type="search" value.bind="symbol" placeholder="Enter Symbol">
+        <label for="search"><i class="material-icons">search</i></label>
+      </div>
+      <p class="right lookup"> 
+        <span id="loader">
+         <md-progress if.bind="isLoading" md-type="circular" md-size="small"></md-progress></span>
+         <button if.bind="!isLoading" click.trigger="lookupSymbol()" disabled.bind="disableLookup" md-button md-waves>Lookup</button></p>
+    </form>
+</template>

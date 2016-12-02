@@ -1,0 +1,12 @@
+<template>
+  <require from="just-landed.html"></require>
+  <require from="exchange"></require>
+  <div class="container">
+    <div if.bind="justLanded" class="section">
+      <just-landed enter-exchange.call="enterExchange()"></just-landed>
+    </div>
+    <div if.bind="!justLanded" class="section">
+      <exchange></exchange>
+    </div>
+  </div>
+</template>

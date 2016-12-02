@@ -1,0 +1,36 @@
+<template>
+<require from="components/third-party/numeric-input"></require>
+<div id="stock" class="card-panel">
+    <h4 if.bind="!hasCurrentStock" class="center-align">No stock to display</h4>
+  <div if.bind="hasCurrentStock" >
+    <div class="section">
+      ${app.currentStock.name} (${app.currentStock.symbol})
+    </div>
+    <div class="section">
+      <table class="bordered">
+        <thead>
+          <tr>
+            <th data-field="id">Bid</th>
+            <th data-field="name">Ask</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>${app.currentStock.bidPrice} </td>
+            <td>${app.currentStock.askPrice} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="section">
+        <numeric-input klass="col s4" value.bind="quantity"></numeric-input>
+        <div class="button-row col s8">
+          <button click.trigger="buyStock()" disabled.bind="!quantityValidAndHasEnoughCash" md-button class="primary">Buy</button>
+          <button click.trigger="sellStock()" disabled.bind="!quantityValidAndHasStock"  md-button class="primary">Sell</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</template>

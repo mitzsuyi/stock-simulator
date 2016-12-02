@@ -1,0 +1,31 @@
+<template>
+<require from="components/portfolio/stock-view"></require>
+<div id="portfolio" class="card-panel">
+  <div id="header" class="section">
+      <div class="left">Current Portfolio</div>
+      <div class="right">Cash: ${app.currentPortfolio.cash | currencyFormat}</div>
+  </div>
+  <div class="section">
+     <table class="bordered">
+        <thead>
+          <tr>
+              <th>Company</th>
+              <th>Quantity</th>
+              <th>Price Paid</th>
+              <th></th>
+          </tr>
+        </thead>
+        <tbody> 
+          <tr repeat.for="[symbol, portFolioStock] of app.currentPortfolio.stocks"> 
+            <td>${portFolioStock.stock.name} </td>
+            <td>${portFolioStock.quantity} </td>
+            <td>${portFolioStock.paid | numberFormat}</td>
+            <td>  
+              <stock-view stock.bind="portFolioStock.stock"></stock-view>
+            </td>
+          </tr>
+        </tbody>
+      </table>       
+  </div><div class="row"></div>
+</div>
+</template>

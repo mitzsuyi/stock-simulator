@@ -1,0 +1,10 @@
+<template>
+  <require from="nav-bar.html"></require>
+  <header>
+  <nav-bar restart.call="restart()" just-landed.bind="justLanded" router.bind="router"></nav-bar>
+  </header>
+   <div style="clear:both"></div>
+   <main>
+    <router-view></router-view>
+  </main>
+</template>

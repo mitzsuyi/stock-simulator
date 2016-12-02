@@ -1,0 +1,37 @@
+nav form  {
+  width:180px;
+  margin-left: 13%;
+}
+nav form.pushed {
+  margin-left:45%;
+}
+nav form .lookup {
+  position:relative;
+  left:150px;
+  top:-70px;
+}
+
+nav form.pushed  .lookup{
+  top:-80px;
+}
+
+#stock, #portfolio {
+  min-width:330px;
+}
+#loader {
+  position: relative;
+  top: 10px;
+  left: -50px;
+}
+
+#portfolio, #stock {
+  min-height: 327px
+}
+#portfolio #header {
+  position:relative;
+  top: -5px;
+  padding-bottom: 35px;
+}
+nav .brand-logo {
+ margin-left: 43px
+}

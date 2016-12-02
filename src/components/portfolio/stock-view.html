@@ -1,0 +1,15 @@
+<template>
+<button md-button md-waves click.delegate="openModal()">View Stock </button></p>
+<div md-modal md-modal.ref="modal" class="modal bottom-sheet">
+  <div class="modal-content">
+    <md-collection>
+      <md-collection-header>
+        <h4>Stock (${stock.symbol})</h4>
+      </md-collection-header> 
+      <md-collection-item repeat.for="prop of stock.raw|keys">
+        ${prop} : ${stock.raw[prop]} 
+      </md-collection-item>
+    </md-collection>
+  </div>
+</div>
+</template>
